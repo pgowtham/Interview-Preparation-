@@ -1,0 +1,39 @@
+class BinarySearch_iterative
+{
+int search(int[] A,int key)
+{
+int low=0;
+int high=A.length-1;
+
+
+while(low<=high)
+{
+int mid=(low+high)/2;
+if(key==A[mid])
+return mid;
+else if(key>A[mid])
+low=mid+1;
+else
+high=mid-1;
+}
+
+return -1;
+}
+
+
+public static void main(String[] args)
+{
+BinarySearch_iterative b=new BinarySearch_iterative();
+int A[]={10,20,30,40,50,60};
+System.out.println(b.search(A,1));
+System.out.println(b.search(A,10));
+System.out.println(b.search(A,20));
+System.out.println(b.search(A,30));
+System.out.println(b.search(A,40));
+System.out.println(b.search(A,50));
+System.out.println(b.search(A,100));
+System.out.println(b.search(A,120));
+System.out.println(b.search(A,60));
+}
+
+}
