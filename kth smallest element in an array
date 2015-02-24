@@ -1,0 +1,90 @@
+class Kthsmallest_element
+{
+int order(int[] A,int pos)
+{
+ 
+int k=quicksort(A,0,A.length-1,pos);
+//System.out.println(k);
+
+return 0;
+}
+int quicksort(int[] A,int low,int high,int pos)
+{
+int pivot;
+if(high>=low && pos-1<=high)
+{
+pivot=partition(A,low,high);
+
+if(pivot==pos-1)
+{
+//System.out.println(pivot);
+System.out.println(A[pivot]);
+}
+if(pivot>pos-1)
+quicksort(A,low,pivot-1,pos);
+if(pivot<pos-1)
+{
+quicksort(A,pivot+1,high,pos);
+
+}
+}
+return 0;
+}
+int partition(int[] A,int low,int high)
+{
+//System.out.println("hello");
+int left=low;
+int right=high;
+if(left==right)
+return right;
+int pivot_element=A[low];
+//System.out.println(pivot_element);
+while(left<right)
+{
+while(left<=right && pivot_element>=A[left])
+{
+//System.out.println("hello in left");
+left++;
+//System.out.println(left);
+}
+while(right>=left && pivot_element<A[right])
+{
+//System.out.println("hello in right");
+
+
+right--;
+//System.out.println(right);
+}
+if(left<right)
+swap(A,left,right);
+}
+A[low]=A[right];
+A[right]=pivot_element;
+//System.out.println(A[right]);
+//System.out.println(right);
+return right;
+}
+int[] swap(int[] A,int left,int right)
+{
+int temp; 
+temp=A[left];
+A[left]=A[right];
+A[right]=temp;
+left++;
+right--;
+
+return A;
+}
+
+public static void main(String[] args)
+{
+Kthsmallest_element obj=new Kthsmallest_element();
+//int[] A={10,20,30,40,50,60};
+int[] A={-100,300,-250,-300,500};
+int[] C={1000,900,800,700};
+int[] D={1,2,3,4};
+obj.order(A,3);
+obj.order(A,5);
+obj.order(C,2);
+obj.order(D,1);
+}}
