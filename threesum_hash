@@ -1,0 +1,56 @@
+import java.util.*;
+class threesum_hash
+{
+
+ int[] threesum(int[] a,int target)
+ {
+       HashMap<Integer,Integer> map =new HashMap<Integer,Integer>();
+       int[] result=new int[3];
+       int i,j,k;
+
+       for(i=0;i<a.length;i++)
+       {
+          if(map.get(a[i])==null)
+             map.put(target-a[i],i);
+
+              }
+
+//boolean s=true;
+
+        for(j=1;j<a.length;j++)
+        {
+         for(k=j+1;k<a.length;k++)
+         {
+
+           if(map.get(a[j]+a[k])!=null && map.get(a[j]+a[k])!=j && map.get(a[j]+a[k])!=k)
+
+            {
+              result[0]=map.get(a[j]+a[k]);
+              result[1]=j;
+              result[2]=k;
+              //s=false;
+              }
+
+            }
+           }
+            for(int m=0;m<3;m++)
+            {
+              System.out.println(result[m]);
+              }
+
+    return result;
+}
+
+public static void main(String[] args)
+{
+threesum_hash obj=new threesum_hash();
+int[] A={10,20,30,40,50,60,70};
+int[] b={30,40,70,10,20,1};
+int[] c={100,91,2,36,48,12};
+
+obj.threesum(A,180);
+obj.threesum(b,101);
+obj.threesum(c,114);
+
+}
+}
