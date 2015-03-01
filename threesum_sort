@@ -1,0 +1,57 @@
+import java.util.*;
+class threesum_sort
+{
+int[] threesum(int[] A,int target)
+{
+Arrays.sort(A);
+
+
+
+
+int[] result=new int[3];
+for(int i=0;i<A.length;i++)
+{
+int begin=i+1;
+int end=A.length-1;
+
+while(end>begin)
+{
+
+if(target-A[i]>(A[begin]+A[end]))
+{
+begin++;
+
+}
+else if(target-A[i]<(A[begin]+A[end]))
+end--;
+else
+{
+result[0]=A[i];
+result[1]=A[begin];
+result[2]=A[end];
+
+System.out.println(result[0]);
+System.out.println(result[1]);
+System.out.println(result[2]);
+begin++;
+end--;
+
+}
+}
+}
+
+return result;
+
+}
+
+public static void main(String[] args)
+{
+threesum_sort obj =new threesum_sort();
+int[] a={10,20,30,40,50,60,70,36,14,4,0};
+int[] b={30,40,70,10,20,1,60};
+int[] c={100,91,2,36,48,12,190,2,1};
+
+obj.threesum(a,60);
+obj.threesum(b,81);
+obj.threesum(c,193);
+}
