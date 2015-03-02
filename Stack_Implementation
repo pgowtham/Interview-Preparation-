@@ -1,0 +1,76 @@
+class stack
+{
+int[] a=new int[100];
+int capacity =10;
+int top =-1;
+public boolean isEmpty(){
+  return(top==-1);
+   }
+public boolean isFull(){
+   return(top==capacity-1);
+    }
+
+public int push(int data){
+
+if(isFull())
+{
+System.out.println("STACK OVERFLOW");
+return 0;
+}
+else
+return(a[++top]=data);
+
+}
+
+
+public int pop(){
+
+if(isEmpty()){
+System.out.println("STACK UNDERFLOW");
+return 0;}
+else
+return(a[top--]);
+
+}
+
+public int peek(){
+return top;
+}
+
+
+
+public static void main(String[] args)
+{
+
+stack obj =new stack();
+System.out.println(obj.push(2));
+System.out.println(obj.push(3));
+System.out.println(obj.push(4));
+System.out.println(obj.push(5));
+System.out.println(obj.push(6));
+System.out.println(obj.push(7));
+System.out.println(obj.push(8));
+System.out.println(obj.push(9));
+System.out.println(obj.push(10));
+System.out.println(obj.push(11));
+System.out.println(obj.push(12));
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+System.out.println(obj.pop());
+
+
+
+
+}}
+                                                                                                                                                                                           75,1          Bot
