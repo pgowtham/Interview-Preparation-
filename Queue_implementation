@@ -1,0 +1,82 @@
+class queue
+{
+int front=0;
+int rear=-1;
+int[] a =new int[100];
+int capacity =10;
+
+public boolean isFull()
+{
+return(rear==capacity-1);
+}
+public boolean isEmpty()
+{
+return(front>rear);
+}
+
+int enqueue(int data)
+{
+if(isFull())
+{
+System.out.println("The Queue is full");
+return 0;
+}
+else
+return(a[++rear]=data);
+}
+int dequeue()
+{
+if(isEmpty())
+{
+System.out.println("The queue is Empty and Nothing to REmove");
+return 0;
+}
+else
+return(a[front++]);
+
+}
+
+
+public static void main(String[] args)
+{
+
+queue obj =new queue();
+System.out.println(obj.enqueue(1));
+System.out.println(obj.enqueue(2));
+System.out.println(obj.enqueue(3));
+System.out.println(obj.enqueue(4));
+System.out.println(obj.enqueue(5));
+System.out.println(obj.enqueue(6));
+System.out.println(obj.enqueue(7));
+System.out.println(obj.enqueue(8));
+System.out.println(obj.enqueue(9));
+System.out.println(obj.enqueue(10));
+System.out.println(obj.enqueue(11));
+System.out.println(obj.enqueue(12));
+System.out.println(obj.enqueue(13));
+System.out.println(obj.dequeue());
+
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+System.out.println(obj.dequeue());
+
+
+
+
+}
+}
+                                                                                                                                                                                           82,1          Bot
